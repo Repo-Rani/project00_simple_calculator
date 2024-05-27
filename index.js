@@ -7,7 +7,14 @@ const answer = await inquirer.prompt([
         message: "Select one of operators to perform action",
         type: "list",
         name: "operator",
-        choices: ["ADDITION", "SUBTRACTION", "MULTIPLICATION", "DIVISION"],
+        choices: [
+            "ADDITION",
+            "SUBTRACTION",
+            "MULTIPLICATION",
+            "DIVISION",
+            "EXPONENTIATION",
+            "MODULUS",
+        ],
     },
 ]);
 //   Conditional Statement
@@ -23,6 +30,12 @@ else if (answer.operator === "MULTIPLICATION") {
 else if (answer.operator === "DIVISION") {
     console.log(answer.firstNumber / answer.secondNumber);
 }
+else if (answer.operator === "EXPONENTIATION") {
+    console.log(answer.firstNumber ** answer.secondNumber);
+}
+else if (answer.operator === "MODULUS") {
+    console.log(answer.firstNumber % answer.secondNumber);
+}
 else {
-    "Please select correct operator";
+    ("Please select correct operator");
 }
